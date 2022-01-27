@@ -14,6 +14,9 @@
 		F717B81A27A017BB001AE4CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F717B81827A017BB001AE4CD /* LaunchScreen.storyboard */; };
 		F723D36327A035AD00FC22BE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723D36227A035AD00FC22BE /* GameViewController.swift */; };
 		F723D36527A03BE600FC22BE /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723D36427A03BE600FC22BE /* GameModel.swift */; };
+		F78E0F5A27A2EA57008BF4F2 /* YellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E0F5927A2EA57008BF4F2 /* YellowViewController.swift */; };
+		F78E0F5C27A2EC69008BF4F2 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E0F5B27A2EC69008BF4F2 /* BlueViewController.swift */; };
+		F78E0F5E27A2F111008BF4F2 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E0F5D27A2F111008BF4F2 /* GreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		F717B81B27A017BB001AE4CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F723D36227A035AD00FC22BE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F723D36427A03BE600FC22BE /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		F78E0F5927A2EA57008BF4F2 /* YellowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowViewController.swift; sourceTree = "<group>"; };
+		F78E0F5B27A2EC69008BF4F2 /* BlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
+		F78E0F5D27A2F111008BF4F2 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				F717B81827A017BB001AE4CD /* LaunchScreen.storyboard */,
 				F717B81B27A017BB001AE4CD /* Info.plist */,
 				F723D36427A03BE600FC22BE /* GameModel.swift */,
+				F78E0F5927A2EA57008BF4F2 /* YellowViewController.swift */,
+				F78E0F5B27A2EC69008BF4F2 /* BlueViewController.swift */,
+				F78E0F5D27A2F111008BF4F2 /* GreenViewController.swift */,
 			);
 			path = FindNumber_icodeschool;
 			sourceTree = "<group>";
@@ -145,6 +154,9 @@
 				F723D36527A03BE600FC22BE /* GameModel.swift in Sources */,
 				F723D36327A035AD00FC22BE /* GameViewController.swift in Sources */,
 				F717B81027A017BA001AE4CD /* SceneDelegate.swift in Sources */,
+				F78E0F5C27A2EC69008BF4F2 /* BlueViewController.swift in Sources */,
+				F78E0F5A27A2EA57008BF4F2 /* YellowViewController.swift in Sources */,
+				F78E0F5E27A2F111008BF4F2 /* GreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
