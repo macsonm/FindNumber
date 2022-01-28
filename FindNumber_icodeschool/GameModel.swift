@@ -45,10 +45,10 @@ class Game{
     private var timer: Timer?
     private var updateTimer:((StatusGame,Int)->Void)
     
-    init(countItems: Int, time: Int, updateTimer: @escaping (_ status: StatusGame,_ seconds: Int) -> Void){
+    init(countItems: Int, updateTimer: @escaping (_ status: StatusGame,_ seconds: Int) -> Void){
         self.countItems = countItems
-        self.timerForGame = time
-        self.secondsGame = time
+        self.timerForGame = Settings.shared.currentSettings.timeForGame
+        self.secondsGame = self.timerForGame
         self.updateTimer = updateTimer
         
         setupGame()
@@ -65,10 +65,15 @@ class Game{
         
         nextItem = itemsButtons.shuffled().first    //рандомим цифры, которые будут выводиться на кнопках
         updateTimer(status,secondsGame)
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true
-                                     , block: { [weak self] (_) in
-            self?.secondsGame -= 1
-        })
+        
+        if Settings.shared.currentSettings.timerState{
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true
+                                         , block: { [weak self] (_) in
+                self?.secondsGame -= 1
+                print("Timer")
+            })
+        }
+        
     }
  
     func newGame(){
@@ -92,7 +97,7 @@ class Game{
         }
     }
  
-    private func stopGame() {
+    func stopGame() {
         timer?.invalidate()
     }
     
