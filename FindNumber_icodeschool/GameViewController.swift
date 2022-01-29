@@ -103,6 +103,7 @@ class GameViewController: UIViewController {
     }
     
     private func showAlertActionSheet(){
+       
         let alert = UIAlertController(title: "What do you want to do next?", message: nil, preferredStyle: .actionSheet)
         
         //добавляем кнопки действий
@@ -110,8 +111,9 @@ class GameViewController: UIViewController {
             self?.game.newGame()
             self?.setupScreen()
         }
-        let showRecord = UIAlertAction(title: "Go to scoreboard", style: .default) { (_) in
-                // TODO: - RECORD VIEW CONTROLLER
+        let showRecord = UIAlertAction(title: "Go to scoreboard", style: .default) { [weak self](_) in
+            self?.performSegue(withIdentifier: "recordVC", sender: nil)
+
         }
         
         let menuAction = UIAlertAction(title: "Back to menu", style: .destructive) { [weak self] (_) in
@@ -134,9 +136,16 @@ class GameViewController: UIViewController {
 //            popover.sourceView = self.view
 //            popover.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
 //            popover.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
-            
+          
         }
         
         present(alert, animated: true, completion: nil)
     }
+
 }
+
+// FIXME: метки в коде
+//    #warning("test")
+//   #error("test")
+//assert() //упадет приложение при указанном условии (для дебага, не работает в опубликованных приложениях appstore)
+//fatalError() //роняет приложение даже на релизе в апп стор

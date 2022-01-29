@@ -20,15 +20,12 @@ struct SettingsGame: Codable {       //структура для сохране�
 }
 
 
-
 class Settings {
     static var shared = Settings()      //singleton - не будет уничтожен пока программа работает
     
     private let defaultSettings = SettingsGame(timerState: true, timeForGame: 30)
     
     var currentSettings: SettingsGame {     //сохраняем экземпляр структуры SettingsGame в хранилище UserDefaults
-
-//MARK: - ???????
         get{        //получение настроек
             if let data = UserDefaults.standard.object(forKey: KeysUserDefaults.settingGame) as? Data {
                 return try! PropertyListDecoder().decode(SettingsGame.self, from: data)     //try!

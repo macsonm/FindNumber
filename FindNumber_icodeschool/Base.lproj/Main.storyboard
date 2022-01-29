@@ -38,9 +38,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IK3-4l-U2b">
                                         <rect key="frame" x="0.0" y="122" width="95.5" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Record"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Stats"/>
                                         <connections>
-                                            <segue destination="n6p-gR-Rrr" kind="presentation" id="II1-Jz-n09"/>
+                                            <segue destination="iT0-1Y-aJR" kind="presentation" modalPresentationStyle="fullScreen" id="II1-Jz-n09"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -297,6 +297,7 @@
                         <outletCollection property="buttons" destination="PyH-YW-gQK" collectionClass="NSMutableArray" id="MBc-KU-GL7"/>
                         <outletCollection property="buttons" destination="wvi-DL-Z40" collectionClass="NSMutableArray" id="SIc-zq-bR2"/>
                         <outletCollection property="buttons" destination="wIw-Kf-Fwt" collectionClass="NSMutableArray" id="OQL-Ed-lGG"/>
+                        <segue destination="iT0-1Y-aJR" kind="presentation" identifier="recordVC" modalPresentationStyle="fullScreen" id="XvP-cc-VBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgZ-23-aha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -390,7 +391,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwx-3Z-zlo">
-                                                    <rect key="frame" x="20" y="11.5" width="44" height="21"/>
+                                                    <rect key="frame" x="20" y="11.5" width="295" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -403,6 +404,7 @@
                                                 </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="MLM-rj-UtI" firstAttribute="leading" secondItem="dwx-3Z-zlo" secondAttribute="trailing" constant="10" id="O7w-6R-sCh"/>
                                                 <constraint firstAttribute="trailing" secondItem="MLM-rj-UtI" secondAttribute="trailing" constant="40" id="eT6-L2-cdr"/>
                                                 <constraint firstItem="dwx-3Z-zlo" firstAttribute="leading" secondItem="2AK-wb-KDq" secondAttribute="leadingMargin" id="gn2-Xm-S4W"/>
                                                 <constraint firstItem="MLM-rj-UtI" firstAttribute="centerY" secondItem="2AK-wb-KDq" secondAttribute="centerY" id="r5I-lq-V3I"/>
@@ -433,6 +435,7 @@
                                             <constraints>
                                                 <constraint firstItem="Lqr-36-kqN" firstAttribute="centerY" secondItem="jMv-SI-Vld" secondAttribute="centerY" id="7ZA-tS-vmx"/>
                                                 <constraint firstItem="AJR-IJ-nkT" firstAttribute="centerY" secondItem="jMv-SI-Vld" secondAttribute="centerY" id="GSS-tQ-16k"/>
+                                                <constraint firstItem="Lqr-36-kqN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AJR-IJ-nkT" secondAttribute="trailing" constant="10" id="OBz-pl-BIC"/>
                                                 <constraint firstAttribute="trailing" secondItem="Lqr-36-kqN" secondAttribute="trailing" constant="10" id="T1m-yQ-o9t"/>
                                                 <constraint firstItem="AJR-IJ-nkT" firstAttribute="leading" secondItem="jMv-SI-Vld" secondAttribute="leading" constant="20" symbolic="YES" id="lzG-Vt-7Ep"/>
                                             </constraints>
@@ -486,12 +489,11 @@
             <objects>
                 <viewController id="n6p-gR-Rrr" customClass="RecordViewController" customModule="FindNumber_icodeschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TZz-sn-ieN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biz-0n-mYt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biz-0n-mYt">
                                 <rect key="frame" x="186" y="291" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -499,17 +501,48 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NSJ-JX-j7Y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="biz-0n-mYt" firstAttribute="top" secondItem="NSJ-JX-j7Y" secondAttribute="top" constant="203" id="caZ-Em-yAB"/>
+                            <constraint firstItem="biz-0n-mYt" firstAttribute="centerX" secondItem="TZz-sn-ieN" secondAttribute="centerX" id="gJd-dL-RFi"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Stats" id="76h-s1-xHG"/>
+                    <navigationItem key="navigationItem" title="Stats" id="76h-s1-xHG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CSG-XH-4md">
+                            <connections>
+                                <action selector="closeModalVC:" destination="n6p-gR-Rrr" id="jx1-q1-lhr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="recordLabel" destination="biz-0n-mYt" id="LzL-rc-wxp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iyc-6d-ieK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1755" y="151"/>
+            <point key="canvasLocation" x="-844.92753623188412" y="150.66964285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A8W-Hv-Xwr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iT0-1Y-aJR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L3p-Vi-k00">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="n6p-gR-Rrr" kind="relationship" relationship="rootViewController" id="LwZ-Ch-gEU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deE-3h-aRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1755.072463768116" y="150.66964285714286"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="II1-Jz-n09"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
