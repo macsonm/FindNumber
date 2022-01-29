@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,28 +13,49 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Numbers" translatesAutoresizingMaskIntoConstraints="NO" id="osA-qG-A3p">
-                                <rect key="frame" x="20" y="44" width="374" height="304"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Numbers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTb-YO-lzc">
-                                <rect key="frame" x="134" y="373" width="146" height="97"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gl8-Q3-h4u">
+                                <rect key="frame" x="95" y="312" width="200" height="230"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Numbers" translatesAutoresizingMaskIntoConstraints="NO" id="osA-qG-A3p">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="KEa-bx-BQN"/>
+                                            <constraint firstAttribute="height" constant="200" id="tfX-HC-qX2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numbers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTb-YO-lzc">
+                                        <rect key="frame" x="0.0" y="210" width="200" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="KTb-YO-lzc" firstAttribute="top" secondItem="osA-qG-A3p" secondAttribute="bottom" constant="10" id="Mt3-Be-gbS"/>
+                                    <constraint firstItem="osA-qG-A3p" firstAttribute="leading" secondItem="Gl8-Q3-h4u" secondAttribute="leading" id="T2r-am-2QX"/>
+                                    <constraint firstAttribute="trailing" secondItem="osA-qG-A3p" secondAttribute="trailing" id="bH0-0e-NUU"/>
+                                    <constraint firstItem="osA-qG-A3p" firstAttribute="top" secondItem="Gl8-Q3-h4u" secondAttribute="top" id="eR1-Ob-v5C"/>
+                                    <constraint firstAttribute="trailing" secondItem="KTb-YO-lzc" secondAttribute="trailing" id="f7A-Hl-qUa"/>
+                                    <constraint firstAttribute="bottom" secondItem="KTb-YO-lzc" secondAttribute="bottom" id="iR6-F3-wXG"/>
+                                    <constraint firstItem="KTb-YO-lzc" firstAttribute="leading" secondItem="Gl8-Q3-h4u" secondAttribute="leading" id="jaZ-Ic-Sen"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gl8-Q3-h4u" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ncu-ET-Ucn"/>
+                            <constraint firstItem="Gl8-Q3-h4u" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cgj-jK-ppl"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="374.18478260869568"/>
         </scene>
     </scenes>
     <resources>

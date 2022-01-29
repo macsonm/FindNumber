@@ -78,10 +78,65 @@ class GameViewController: UIViewController {
             statusLabel.text = "Win"
             statusLabel.textColor = .green
             newGameButton.isHidden = false
+            if game.isNewRecord{
+                showAlert()
+            }else{
+                showAlertActionSheet()
+            }
         case .lose:
             statusLabel.text = "Lose"
             statusLabel.textColor = .red
             newGameButton.isHidden = false
+            showAlertActionSheet()
         }
+    }
+    
+        private func showAlert() {
+            let alert = UIAlertController(title: "You are winner", message: "You set new Record", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            
+            present(alert, animated: true, completion: nil)
+
+    }
+    
+    private func showAlertActionSheet(){
+        let alert = UIAlertController(title: "What do you want to do next?", message: nil, preferredStyle: .actionSheet)
+        
+        //добавляем кнопки действий
+        let newGameAction = UIAlertAction(title: "Start new Game", style: .default) { [weak self] (_) in
+            self?.game.newGame()
+            self?.setupScreen()
+        }
+        let showRecord = UIAlertAction(title: "Go to scoreboard", style: .default) { (_) in
+                // TODO: - RECORD VIEW CONTROLLER
+        }
+        
+        let menuAction = UIAlertAction(title: "Back to menu", style: .destructive) { [weak self] (_) in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(newGameAction)
+        alert.addAction(showRecord)
+        alert.addAction(menuAction)
+        alert.addAction(cancelAction)
+        
+        //на ipad падает приложение, если не привязать точку привязки (popover)
+        if let popover = alert.popoverPresentationController{
+            
+            popover.sourceView = statusLabel //привязка alertController к, например, label:
+            
+//            //стандартный вывод в центре экрана уведомления
+//            popover.sourceView = self.view
+//            popover.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+//            popover.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
+            
+        }
+        
+        present(alert, animated: true, completion: nil)
     }
 }

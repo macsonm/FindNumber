@@ -25,9 +25,23 @@ class Game{
     var itemsButtons: [Item] = []
     private var countItems: Int
     var nextItem: Item?
+    
+    var isNewRecord = false
+    
     var status: StatusGame = .start{
         didSet{
             if status != .start{
+                if status == .win {
+                    let newRecord = timerForGame - secondsGame
+                    
+                    let record = UserDefaults.standard.integer(forKey: KeysUserDefaults.recordGame)
+                    
+                    if record == 0 || newRecord < record {
+                        UserDefaults.standard.setValue(newRecord, forKey: KeysUserDefaults.recordGame)
+                        isNewRecord = true
+                    }
+                }
+                
                 stopGame()
             }
         }
@@ -56,6 +70,7 @@ class Game{
     
     
     private func setupGame() {
+        isNewRecord = false
         var digits = dataNumbers.shuffled()
         itemsButtons.removeAll()        //очистка номерков для кнопочек
         while itemsButtons.count < countItems {

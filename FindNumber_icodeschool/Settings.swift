@@ -9,6 +9,8 @@ import Foundation
 
 enum KeysUserDefaults{
     static let settingGame = "settingsGame"
+    
+    static let recordGame = "recordGame"
 }
 
 struct SettingsGame: Codable {       //структура для сохранения настроек в UserDefauls.standard.integer; для сохранения экзепляра необходимо перевести его в тип Data, для этого подписываемся под Codable

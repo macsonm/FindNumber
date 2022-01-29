@@ -20,6 +20,7 @@
 		F7AC6BA227A3FCCB005FE2E5 /* SelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC6BA127A3FCCB005FE2E5 /* SelectTimeViewController.swift */; };
 		F7AC6BA427A3FD26005FE2E5 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC6BA327A3FD26005FE2E5 /* SettingsTableViewController.swift */; };
 		F7AC6BA627A460D7005FE2E5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC6BA527A460D7005FE2E5 /* Settings.swift */; };
+		F7AC6BA827A5BCB8005FE2E5 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC6BA727A5BCB8005FE2E5 /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F7AC6BA127A3FCCB005FE2E5 /* SelectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewController.swift; sourceTree = "<group>"; };
 		F7AC6BA327A3FD26005FE2E5 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F7AC6BA527A460D7005FE2E5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F7AC6BA727A5BCB8005FE2E5 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				F7AC6BA127A3FCCB005FE2E5 /* SelectTimeViewController.swift */,
 				F7AC6BA327A3FD26005FE2E5 /* SettingsTableViewController.swift */,
 				F7AC6BA527A460D7005FE2E5 /* Settings.swift */,
+				F7AC6BA727A5BCB8005FE2E5 /* RecordViewController.swift */,
 			);
 			path = FindNumber_icodeschool;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				F723D36327A035AD00FC22BE /* GameViewController.swift in Sources */,
 				F717B81027A017BA001AE4CD /* SceneDelegate.swift in Sources */,
 				F7AC6BA627A460D7005FE2E5 /* Settings.swift in Sources */,
+				F7AC6BA827A5BCB8005FE2E5 /* RecordViewController.swift in Sources */,
 				F78E0F5C27A2EC69008BF4F2 /* BlueViewController.swift in Sources */,
 				F78E0F5A27A2EA57008BF4F2 /* YellowViewController.swift in Sources */,
 				F78E0F5E27A2F111008BF4F2 /* GreenViewController.swift in Sources */,
